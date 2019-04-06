@@ -1,3 +1,10 @@
+import sorting.BubbleSort
+
+
 fun main() {
-    println("Hello algorithms!")
+	println("Hello algorithms!")
+
+	BubbleSort.testBubbleSort()
 }
+
+
