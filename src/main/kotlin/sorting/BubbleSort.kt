@@ -1,22 +1,16 @@
 package sorting
 
-import java.util.*
+import examples.ArrayExamples
+import kotlin.collections.ArrayList
 import kotlin.system.measureTimeMillis
 
 /**
  * Bubble Sort works by repeatedly swapping the adjacent elements if they are in wrong order.
- *
- * It can be optimized by stopping the algorithm if inner loop did not cause any swap.
  */
 class BubbleSort private constructor() {
 	companion object {
-		private val tinyArr = List(10) { (0..1000).random() }.toIntArray()
-		private val shortArr = List(100) { (0..1000).random() }.toIntArray()
-		private val mediumArr = List(1000) { (0..1000).random() }.toIntArray()
-		private val longArr = List(10000) { (0..1000).random() }.toIntArray()
-		private val hugeArr = List(100000) { (0..1000).random() }.toIntArray()
 
-		private fun sort(arr: IntArray): IntArray {
+		fun sort(arr: ArrayList<Int>): ArrayList<Int> {
 			val len = arr.size
 
 			for (i in 0..(len - 2)) { //iterate from 0 to len - 2 (last point [7] id only checked from [6])
@@ -35,33 +29,33 @@ class BubbleSort private constructor() {
 		fun testBubbleSort() {
 			println()
 			println("=== Bubble sort ===")
-			println("Arr to sort: ${Arrays.toString(tinyArr)}")
+			println("Arr to sort: ${ArrayExamples.tinyArr}")
 
-			var sorted: IntArray? = null
+			var sorted: ArrayList<Int>? = null
 
 			val tinyTime = measureTimeMillis {
-				sorted = sort(tinyArr)
+				sorted = sort(ArrayExamples.tinyArr)
 			}
 			val shortTime = measureTimeMillis {
-				sort(shortArr)
+				sort(ArrayExamples.shortArr)
 			}
 			val mediumTime = measureTimeMillis {
-				sort(mediumArr)
+				sort(ArrayExamples.mediumArr)
 			}
 			val longTime = measureTimeMillis {
-				sort(longArr)
+				sort(ArrayExamples.longArr)
 			}
 			val hugeTime = measureTimeMillis {
-				sort(hugeArr)
+				sort(ArrayExamples.hugeArr)
 			}
 
-			println("Sorted arr: ${Arrays.toString(sorted)}")
+			println("Sorted arr: $sorted")
 
-			println("Arr of ${tinyArr.size} elements was sorted in $tinyTime milliseconds")
-			println("Arr of ${shortArr.size} elements was sorted in $shortTime milliseconds")
-			println("Arr of ${mediumArr.size} elements was sorted in $mediumTime milliseconds")
-			println("Arr of ${longArr.size} elements was sorted in $longTime milliseconds")
-			println("Arr of ${hugeArr.size} elements was sorted in $hugeTime milliseconds")
+			println("Arr of ${ArrayExamples.tinyArr.size} elements was sorted in $tinyTime milliseconds")
+			println("Arr of ${ArrayExamples.shortArr.size} elements was sorted in $shortTime milliseconds")
+			println("Arr of ${ArrayExamples.mediumArr.size} elements was sorted in $mediumTime milliseconds")
+			println("Arr of ${ArrayExamples.longArr.size} elements was sorted in $longTime milliseconds")
+			println("Arr of ${ArrayExamples.hugeArr.size} elements was sorted in $hugeTime milliseconds")
 
 		}
 	}
