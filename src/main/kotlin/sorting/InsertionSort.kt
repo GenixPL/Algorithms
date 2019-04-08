@@ -1,32 +1,17 @@
 package sorting
 
 import data.ArrayExamples
-import kotlin.collections.ArrayList
 import kotlin.system.measureTimeMillis
 
 /**
- * Bubble Sort works by repeatedly swapping the adjacent elements if they are in wrong order.
+ * Insertion sortFromZeroToOne is a simple sorting algorithm that builds the final sorted array one item at a time
  */
-class BubbleSort private constructor() {
+class InsertionSort private constructor() {
 	companion object {
 
-		fun sort(arr: ArrayList<Int>) {
-			val len = arr.size
-
-			for (i in 0..(len - 2)) { //iterate from 0 to len - 2 (last point [7] id only checked from [6])
-				for (j in 0..(len - i - 2)) { //iterate from 0 to last unsorted point (len - i - 2)
-					if (arr[j] > arr[j + 1]) { //if next point is smaller than current, then switch them
-						val temp = arr[j]
-						arr[j] = arr[j + 1]
-						arr[j + 1] = temp
-					}
-				}
-			}
-		}
-
-		fun testBubbleSort() {
+		fun testInsertionSort() {
 			println()
-			println("=== Bubble sortFromZeroToOne ===")
+			println("=== Insertion sortFromZeroToOne ===")
 			println("Arr to sortFromZeroToOne: ${ArrayExamples.tinyArr}")
 
 			val tinyArr: ArrayList<Int> = ArrayExamples.tinyArr
@@ -55,6 +40,32 @@ class BubbleSort private constructor() {
 			println("Arr of ${ArrayExamples.longArr.size} elements was sorted in $longTime milliseconds")
 			println("Arr of ${ArrayExamples.hugeArr.size} elements was sorted in $hugeTime milliseconds")
 
+		}
+
+		fun sort(arr: ArrayList<Int>) {
+			for (i in 0..(arr.size - 1)) {
+				val key = arr[i]
+
+				var j = i - 1
+				while (j >= 0 && arr[j] > key) {
+					arr[j + 1] = arr[j]
+					j--
+				}
+				arr[j + 1] = key
+			}
+		}
+
+		fun sortFloat(arr: ArrayList<Float>) {
+			for (i in 0..(arr.size - 1)) {
+				val key = arr[i]
+
+				var j = i - 1
+				while (j >= 0 && arr[j] > key) {
+					arr[j + 1] = arr[j]
+					j--
+				}
+				arr[j + 1] = key
+			}
 		}
 	}
 }

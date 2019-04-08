@@ -1,6 +1,6 @@
 package sorting
 
-import examples.ArrayExamples
+import data.ArrayExamples
 import kotlin.collections.ArrayList
 import kotlin.system.measureTimeMillis
 
@@ -13,8 +13,8 @@ class MergeSort private constructor() {
 
 		fun testMergeSort() {
 			println()
-			println("=== Merge sort ===")
-			println("Arr to sort: ${ArrayExamples.tinyArr}")
+			println("=== Merge sortFromZeroToOne ===")
+			println("Arr to sortFromZeroToOne: ${ArrayExamples.tinyArr}")
 
 			var sorted: ArrayList<Int>? = null
 

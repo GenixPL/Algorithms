@@ -1,4 +1,4 @@
-package examples
+package data
 
 class ArrayExamples private constructor() {
 	companion object {
@@ -7,6 +7,8 @@ class ArrayExamples private constructor() {
 		private val mediumArray = List(1000) { (-1000..1000).random() }
 		private val longArray = List(10000) { (-1000..1000).random() }
 		private val hugeArray = List(100000) { (-1000..1000).random() }
+		private val enormousArray = List(10000000) { (0..10000000).random() }
+
 
 		val tinyArr: ArrayList<Int>
 			get() = ArrayList(tinyArray)
@@ -22,5 +24,8 @@ class ArrayExamples private constructor() {
 
 		val hugeArr: ArrayList<Int>
 			get() = ArrayList(hugeArray)
+
+		val enormousArr: ArrayList<Int>
+			get() = ArrayList(enormousArray)
 	}
 }
