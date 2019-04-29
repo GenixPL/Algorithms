@@ -8,7 +8,7 @@ fun main() {
 
 //	BubbleSort.testBubbleSort()
 //	MergeSort.testMergeSort()
-	QuickSort.testQuickSort()
+//	QuickSort.testQuickSort()
 //	InsertionSort.testInsertionSort()
 //	BucketSort.testBucketSort()
 

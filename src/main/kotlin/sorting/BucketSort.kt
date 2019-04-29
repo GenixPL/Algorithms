@@ -16,8 +16,8 @@ class BucketSort private constructor() {
 
 		fun testBucketSort() {
 			println()
-			println("=== Bucket sortFromZeroToOne ===")
-			println("Arr to sortFromZeroToOne: ${castFromZeroToOne(ArrayExamples.tinyArr)}")
+			println("=== Bucket sort ===")
+			println("Arr to sort: ${castFromZeroToOne(ArrayExamples.tinyArr)}")
 
 			val tinyArr: ArrayList<Float> = castFromZeroToOne(ArrayExamples.tinyArr)
 
@@ -66,15 +66,15 @@ class BucketSort private constructor() {
 		fun sortFromZeroToOne(arr: ArrayList<Float>, bucketsNumber: Int) {
 			val buckets = Array<ArrayList<Float>>(bucketsNumber) { ArrayList(0) }
 
-			for (i in 0..(arr.size - 1)) {
+			for (i in 0 until arr.size) {
 				buckets[(arr[i] * (bucketsNumber - 1)).roundToInt()].add(arr[i])
 			}
 
 			buckets.forEach { InsertionSort.sortFloat(it) }
 
 			var arrIndex = 0
-			for (i in 0..(buckets.size - 1)) {
-				for (j in 0..(buckets[i].size - 1)) {
+			for (i in 0 until buckets.size) {
+				for (j in 0 until buckets[i].size) {
 					arr[arrIndex] = buckets[i][j]
 					arrIndex++
 				}
@@ -85,21 +85,21 @@ class BucketSort private constructor() {
 			val buckets = Array<ArrayList<Float>>(bucketsNumber) { ArrayList(0) }
 			var max: Int = Int.MIN_VALUE
 
-			for (i in 0..(arr.size - 1)) {
+			for (i in 0 until arr.size) {
 				if (arr[i] > max) {
 					max = arr[i].roundToInt()
 				}
 			}
 
-			for (i in 0..(arr.size - 1)) {
+			for (i in 0 until arr.size) {
 				buckets[floor(arr[i] / max * (bucketsNumber - 1)).roundToInt()].add(arr[i])
 			}
 
 			buckets.forEach { InsertionSort.sortFloat(it) }
 
 			var arrIndex = 0
-			for (i in 0..(buckets.size - 1)) {
-				for (j in 0..(buckets[i].size - 1)) {
+			for (i in 0 until buckets.size) {
+				for (j in 0 until buckets[i].size) {
 					arr[arrIndex] = buckets[i][j]
 					arrIndex++
 				}
@@ -109,7 +109,7 @@ class BucketSort private constructor() {
 		private fun castFromZeroToOne(arr: ArrayList<Int>): ArrayList<Float> {
 			val floatArr = ArrayList<Float>(arr.size)
 
-			for (i in 0..(arr.size - 1)) {
+			for (i in 0 until arr.size) {
 				floatArr.add(abs(arr[i].toFloat() / 1000))
 			}
 
@@ -119,7 +119,7 @@ class BucketSort private constructor() {
 		private fun castToPositive(arr: ArrayList<Int>): ArrayList<Float> {
 			val floatArr = ArrayList<Float>(arr.size)
 
-			for (i in 0..(arr.size - 1)) {
+			for (i in 0 until arr.size) {
 				floatArr.add(abs(arr[i].toFloat()))
 			}
 

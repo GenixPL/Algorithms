@@ -15,8 +15,8 @@ class QuickSort private constructor() {
 
 		fun testQuickSort() {
 			println()
-			println("=== Quick sortFromZeroToOne ===")
-			println("Arr to sortFromZeroToOne: ${ArrayExamples.tinyArr}")
+			println("=== Quick sort ===")
+			println("Arr to sort: ${ArrayExamples.tinyArr}")
 
 			val tinyArr: ArrayList<Int> = ArrayExamples.tinyArr
 
@@ -47,7 +47,6 @@ class QuickSort private constructor() {
 			println("Arr of ${ArrayExamples.longArr.size} elements was sorted in $longTime milliseconds")
 			println("Arr of ${ArrayExamples.hugeArr.size} elements was sorted in $hugeTime milliseconds")
 //			println("Arr of ${ArrayExamples.enormousArr.size} elements was sorted in $enormousTime milliseconds")
-
 		}
 
 		fun sort(arr: ArrayList<Int>, leftIndex: Int, rightIndex: Int) {
@@ -67,7 +66,7 @@ class QuickSort private constructor() {
 			val pivot = arr[rightIndex]
 
 			var i = leftIndex - 1
-			for (j in leftIndex..(rightIndex - 1)) {
+			for (j in leftIndex until rightIndex) {
 				if (arr[j] <= pivot) {
 					i++
 

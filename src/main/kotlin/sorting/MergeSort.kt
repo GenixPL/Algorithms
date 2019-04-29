@@ -13,8 +13,8 @@ class MergeSort private constructor() {
 
 		fun testMergeSort() {
 			println()
-			println("=== Merge sortFromZeroToOne ===")
-			println("Arr to sortFromZeroToOne: ${ArrayExamples.tinyArr}")
+			println("=== Merge sort ===")
+			println("Arr to sort: ${ArrayExamples.tinyArr}")
 
 			var sorted: ArrayList<Int>? = null
 
@@ -41,7 +41,6 @@ class MergeSort private constructor() {
 			println("Arr of ${ArrayExamples.mediumArr.size} elements was sorted in $mediumTime milliseconds")
 			println("Arr of ${ArrayExamples.longArr.size} elements was sorted in $longTime milliseconds")
 			println("Arr of ${ArrayExamples.hugeArr.size} elements was sorted in $hugeTime milliseconds")
-
 		}
 
 		fun sort(arr: ArrayList<Int>): ArrayList<Int> {

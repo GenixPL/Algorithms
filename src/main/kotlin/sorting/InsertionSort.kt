@@ -11,8 +11,8 @@ class InsertionSort private constructor() {
 
 		fun testInsertionSort() {
 			println()
-			println("=== Insertion sortFromZeroToOne ===")
-			println("Arr to sortFromZeroToOne: ${ArrayExamples.tinyArr}")
+			println("=== Insertion sort ===")
+			println("Arr to sort: ${ArrayExamples.tinyArr}")
 
 			val tinyArr: ArrayList<Int> = ArrayExamples.tinyArr
 
@@ -39,11 +39,10 @@ class InsertionSort private constructor() {
 			println("Arr of ${ArrayExamples.mediumArr.size} elements was sorted in $mediumTime milliseconds")
 			println("Arr of ${ArrayExamples.longArr.size} elements was sorted in $longTime milliseconds")
 			println("Arr of ${ArrayExamples.hugeArr.size} elements was sorted in $hugeTime milliseconds")
-
 		}
 
 		fun sort(arr: ArrayList<Int>) {
-			for (i in 0..(arr.size - 1)) {
+			for (i in 0 until arr.size) {
 				val key = arr[i]
 
 				var j = i - 1
@@ -56,7 +55,7 @@ class InsertionSort private constructor() {
 		}
 
 		fun sortFloat(arr: ArrayList<Float>) {
-			for (i in 0..(arr.size - 1)) {
+			for (i in 0 until arr.size) {
 				val key = arr[i]
 
 				var j = i - 1

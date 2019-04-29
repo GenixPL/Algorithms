@@ -26,8 +26,8 @@ class BubbleSort private constructor() {
 
 		fun testBubbleSort() {
 			println()
-			println("=== Bubble sortFromZeroToOne ===")
-			println("Arr to sortFromZeroToOne: ${ArrayExamples.tinyArr}")
+			println("=== Bubble sort ===")
+			println("Arr to sort: ${ArrayExamples.tinyArr}")
 
 			val tinyArr: ArrayList<Int> = ArrayExamples.tinyArr
 
@@ -54,7 +54,6 @@ class BubbleSort private constructor() {
 			println("Arr of ${ArrayExamples.mediumArr.size} elements was sorted in $mediumTime milliseconds")
 			println("Arr of ${ArrayExamples.longArr.size} elements was sorted in $longTime milliseconds")
 			println("Arr of ${ArrayExamples.hugeArr.size} elements was sorted in $hugeTime milliseconds")
-
 		}
 	}
 }
