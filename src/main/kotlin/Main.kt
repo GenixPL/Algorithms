@@ -11,6 +11,7 @@ fun main() {
 //	QuickSort.testQuickSort()
 //	InsertionSort.testInsertionSort()
 //	BucketSort.testBucketSort()
+	HeapSort.testHeapSort()
 
 //	testSortTime()
 //	testAddingElementTime()

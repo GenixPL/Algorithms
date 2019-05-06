@@ -4,7 +4,7 @@ import data.ArrayExamples
 import kotlin.system.measureTimeMillis
 
 /**
- * Insertion sortFromZeroToOne is a simple sorting algorithm that builds the final sorted array one item at a time
+ * Insertion is a simple sorting algorithm that builds the final sorted array one item at a time
  */
 class InsertionSort private constructor() {
 	companion object {
